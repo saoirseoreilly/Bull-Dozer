@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2204829255437084609}
   - component: {fileID: 2204829255437084610}
   - component: {fileID: 2204829255437084611}
+  - component: {fileID: 1278325458247685206}
   m_Layer: 0
   m_Name: Apple
-  m_TagString: Untagged
+  m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,3 +109,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!65 &1278325458247685206
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204829255437084612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014724025, y: 0.014724021, z: 0.015744776}
+  m_Center: {x: 0.000000002095476, y: -0.0000000013969836, z: 3.8448392e-16}

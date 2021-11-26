@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    private Animator playerAnim;
+
+
     public float horizontalInput;
     public float speed = 10.0f;
     public float XRange = 13;
@@ -11,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float gravityModifier;
     public bool isOnGround = true;
+    public bool hasPowerup;
 
 
     private Rigidbody playerRb;
@@ -19,6 +24,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
 
  
@@ -32,7 +38,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround){
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
-            
+            playerAnim.SetTrigger("Runtojumpspring");
+
         }
         if (transform.position.x < -XRange)
         {
@@ -48,11 +55,21 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         isOnGround = true;
  
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+        }
+
     }
 }
