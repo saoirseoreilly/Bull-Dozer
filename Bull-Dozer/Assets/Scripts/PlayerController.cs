@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isOnGround = true;
- 
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
             hasPowerup = true;
             Destroy(other.gameObject);
         }
+
 
     }
 }

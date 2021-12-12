@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MoveForwardApple : MonoBehaviour
 {
-    public AudioSource appleSource;
+    private AudioSource AppleSound;
     public float speed = 40.0f;
     // Start is called before the first frame update
     void Start()
     {
-        appleSource = GetComponent<AudioSource>();
+        AppleSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -17,12 +17,13 @@ public class MoveForwardApple : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * speed);
 
-        void OnCollisionEnter (Collision collision)
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Powerup")
         {
-            if(collision.gameObject.tag == "Apple")
-            {
-                appleSource.Play();
-            }
+            AppleSound.Play();
         }
+
     }
 }
