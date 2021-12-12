@@ -8,7 +8,7 @@ public class CrashSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        crashSource = GetComponent<AudioSource>();
+        crashSource = GetComponent<AudioSource> ();
     }
 
     // Update is called once per frame
