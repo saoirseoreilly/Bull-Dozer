@@ -14,12 +14,13 @@ public class CrashSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        void OnCollisionEnter (Collision collision)
+       
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "fence")
         {
-            if (collision.gameObject.tag == "fence")
-            {
-                crashSource.Play();
-            }
+            crashSource.Play();
         }
     }
 }
