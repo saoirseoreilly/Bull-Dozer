@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Chicken
   - Powerup
+  - Sheep
+  - Cow
+  - Pig
+  - Obstacle
+  - Ground
   layers:
   - Default
   - TransparentFX

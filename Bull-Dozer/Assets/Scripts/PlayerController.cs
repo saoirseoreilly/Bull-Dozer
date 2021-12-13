@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    
 
+    private GameManager gameManager;
 
     public float horizontalInput;
     public float speed = 10.0f;
@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isOnGround = true;
     public bool hasPowerup;
+
+    public bool gameOver = false;
 
 
     private Rigidbody playerRb;
@@ -60,7 +62,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        isOnGround = true;
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            Debug.Log("Game Over!");
+            gameManager.GameOver();
+        }
 
     }
     private void OnTriggerEnter(Collider other)
@@ -70,6 +82,7 @@ public class PlayerController : MonoBehaviour
             hasPowerup = true;
             Destroy(other.gameObject);
         }
+        
 
 
     }

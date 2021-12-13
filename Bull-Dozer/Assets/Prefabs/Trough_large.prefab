@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6012511709581750691}
   m_Layer: 0
   m_Name: Trough_large
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,11 +81,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6176265737413522123}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1419685, y: 0.5829684, z: 0.45468706}
+  m_Center: {x: -0.06972973, y: 0.16536364, z: 0.15837197}
 --- !u!82 &-6012511709581750691
 AudioSource:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.98970675
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
